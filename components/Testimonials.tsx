@@ -65,7 +65,7 @@ export default function Testimonials() {
               ))}
             </div>
             <p className="text-lg text-white mb-6 italic">
-              "{testimonials[currentIndex].text}"
+              &ldquo;{testimonials[currentIndex].text}&rdquo;
             </p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-[#2A2A2A] rounded-full flex items-center justify-center">

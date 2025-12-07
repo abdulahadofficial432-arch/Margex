@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">About Margex</h1>
           <p className="text-xl text-[#A0A0A0] max-w-3xl mx-auto">
-            We're building the future of cryptocurrency trading with innovative tools, 
+            We&apos;re building the future of cryptocurrency trading with innovative tools, 
             professional-grade security, and a commitment to trader success.
           </p>
         </div>
@@ -48,7 +48,7 @@ export default function AboutPage() {
                   for beginners or lacked the advanced features that experienced traders need.
                 </p>
                 <p>
-                  Since our launch, we've grown to serve hundreds of thousands of traders worldwide, 
+                  Since our launch, we&apos;ve grown to serve hundreds of thousands of traders worldwide, 
                   processing billions in trading volume. Our platform combines cutting-edge technology 
                   with intuitive design, making it easy for anyone to start trading while providing 
                   the tools professionals demand.

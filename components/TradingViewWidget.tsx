@@ -16,17 +16,18 @@ export default function TradingViewWidget({
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!containerRef.current) return
+    const container = containerRef.current
+    if (!container) return
 
     // Clear previous content
-    containerRef.current.innerHTML = ''
+    container.innerHTML = ''
 
     // Create TradingView widget script
     const script = document.createElement('script')
     script.src = 'https://s3.tradingview.com/tv.js'
     script.async = true
     script.onload = () => {
-      if (window.TradingView && containerRef.current) {
+      if (window.TradingView && container) {
         new window.TradingView.widget({
           autosize: true,
           symbol: symbol,
@@ -38,7 +39,7 @@ export default function TradingViewWidget({
           toolbar_bg: '#1E1E1E',
           enable_publishing: false,
           allow_symbol_change: true,
-          container_id: containerRef.current.id,
+          container_id: container.id,
           height: height,
           width: '100%',
           hide_side_toolbar: false,
@@ -55,8 +56,12 @@ export default function TradingViewWidget({
 
     return () => {
       // Cleanup
-      if (containerRef.current) {
-        containerRef.current.innerHTML = ''
+      if (container) {
+        container.innerHTML = ''
+      }
+      // Remove script if component unmounts
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
       }
     }
   }, [symbol, height, theme])

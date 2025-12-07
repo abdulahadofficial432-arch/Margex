@@ -163,7 +163,7 @@ export default function CopyTradingPage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Start Copying</h3>
               <p className="text-[#A0A0A0]">
-                Your trades will automatically mirror the selected trader's positions in real-time.
+                Your trades will automatically mirror the selected trader&apos;s positions in real-time.
               </p>
             </div>
           </div>

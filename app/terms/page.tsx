@@ -16,14 +16,14 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">2. Use License</h2>
               <p>
-                Permission is granted to temporarily access the materials on Margex's website for personal, non-commercial
+                Permission is granted to temporarily access the materials on Margex&apos;s website for personal, non-commercial
                 transitory viewing only. This is the grant of a license, not a transfer of title, and under this license
                 you may not:
               </p>
               <ul className="list-disc list-inside ml-4 space-y-2">
                 <li>Modify or copy the materials</li>
                 <li>Use the materials for any commercial purpose or for any public display</li>
-                <li>Attempt to reverse engineer any software contained on Margex's website</li>
+                <li>Attempt to reverse engineer any software contained on Margex&apos;s website</li>
                 <li>Remove any copyright or other proprietary notations from the materials</li>
               </ul>
             </section>
@@ -50,7 +50,7 @@ export default function TermsPage() {
               <p>
                 In no event shall Margex or its suppliers be liable for any damages (including, without limitation, damages
                 for loss of data or profit, or due to business interruption) arising out of the use or inability to use
-                the materials on Margex's website.
+                the materials on Margex&apos;s website.
               </p>
             </section>
 
