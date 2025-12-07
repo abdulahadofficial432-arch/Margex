@@ -61,17 +61,28 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden md:flex md:items-center md:space-x-4">
             <Link
-              href="/login"
-              className="px-4 py-2 text-white hover:text-[#00D9FF] transition-colors"
-            >
-              Log In
-            </Link>
-            <Link
               href="/signup"
               className="px-4 py-2 bg-[#00D9FF] text-black rounded-lg hover:bg-[#00B8D9] transition-colors font-medium"
             >
-              Sign Up
+              Register
             </Link>
+            <Link
+              href="/trading"
+              className="px-4 py-2 bg-[#00D9FF] text-black rounded-lg hover:bg-[#00B8D9] transition-colors font-medium"
+            >
+              Trade Now
+            </Link>
+            <Link
+              href="/login"
+              className="px-4 py-2 text-white hover:text-[#00D9FF] transition-colors"
+            >
+              Login
+            </Link>
+            <button className="p-2 text-white hover:text-[#00D9FF] transition-colors" aria-label="User profile">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -101,18 +112,25 @@ export default function Header() {
             ))}
             <div className="px-4 py-2 space-y-2">
               <Link
-                href="/login"
-                className="block px-4 py-2 text-center text-white border border-[#1E1E1E] rounded-lg hover:border-[#00D9FF] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Log In
-              </Link>
-              <Link
                 href="/signup"
                 className="block px-4 py-2 text-center bg-[#00D9FF] text-black rounded-lg hover:bg-[#00B8D9] transition-colors font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Sign Up
+                Register
+              </Link>
+              <Link
+                href="/trading"
+                className="block px-4 py-2 text-center bg-[#00D9FF] text-black rounded-lg hover:bg-[#00B8D9] transition-colors font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Trade Now
+              </Link>
+              <Link
+                href="/login"
+                className="block px-4 py-2 text-center text-white border border-[#1E1E1E] rounded-lg hover:border-[#00D9FF] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Login
               </Link>
             </div>
           </div>

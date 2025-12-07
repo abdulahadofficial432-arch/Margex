@@ -1,113 +1,133 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowRight, TrendingUp } from 'lucide-react'
-import { useTickerData } from '@/hooks/useMarketData'
-
-interface PriceTicker {
-  symbol: string
-  price: string
-  change: string
-  changePercent: string
-}
+import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
-  const { tickers, loading } = useTickerData()
-  const [tickerData, setTickerData] = useState<PriceTicker[]>([
-    { symbol: 'BTC/USDT', price: '43,250.50', change: '+1,250.30', changePercent: '+2.98%' },
-    { symbol: 'ETH/USDT', price: '2,580.75', change: '+45.20', changePercent: '+1.78%' },
-    { symbol: 'SOL/USDT', price: '98.45', change: '+2.15', changePercent: '+2.23%' },
-    { symbol: 'XRP/USDT', price: '0.6250', change: '+0.0125', changePercent: '+2.04%' },
-  ])
-
-  useEffect(() => {
-    if (tickers.length > 0) {
-      setTickerData(tickers)
-    }
-  }, [tickers])
-
   return (
-    <section className="relative bg-gradient-to-b from-[#0A0A0A] to-[#141414] overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00D9FF] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00D9FF] rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="text-center">
-          {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Trade Crypto with
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D9FF] to-[#00B8D9]">
-              Up to 100x Leverage
-            </span>
-          </h1>
-
-          {/* Subheading */}
-          <p className="text-xl sm:text-2xl text-[#A0A0A0] mb-8 max-w-3xl mx-auto">
-            Advanced trading platform with professional tools, copy trading, and mobile apps.
-            Start trading in minutes.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0A0A0A] via-[#0F1419] to-[#0A0A0A] pt-20 pb-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="text-center lg:text-left z-10">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Your{' '}
+              <span className="text-[#00FF88]">Crypto</span>{' '}
+              trading boutique
+            </h1>
+            <p className="text-xl md:text-2xl text-[#A0A0A0] mb-8">
+              The safest and most reliable platform for digital assets.
+            </p>
             <Link
               href="/signup"
-              className="px-8 py-4 bg-[#00D9FF] text-black rounded-lg hover:bg-[#00B8D9] transition-all font-semibold text-lg flex items-center gap-2 shadow-lg shadow-[#00D9FF]/20"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D9FF] text-black font-semibold rounded-lg hover:bg-[#00B8D9] transition-all transform hover:scale-105 text-lg"
             >
-              Get Started
+              Start Now
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link
-              href="/markets"
-              className="px-8 py-4 bg-transparent border-2 border-[#1E1E1E] text-white rounded-lg hover:border-[#00D9FF] transition-all font-semibold text-lg"
-            >
-              View Markets
-            </Link>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16">
-            <div>
-              <div className="text-3xl font-bold text-[#00D9FF] mb-2">$2B+</div>
-              <div className="text-sm text-[#A0A0A0]">Trading Volume</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[#00D9FF] mb-2">500K+</div>
-              <div className="text-sm text-[#A0A0A0]">Active Traders</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[#00D9FF] mb-2">150+</div>
-              <div className="text-sm text-[#A0A0A0]">Trading Pairs</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[#00D9FF] mb-2">24/7</div>
-              <div className="text-sm text-[#A0A0A0]">Support</div>
-            </div>
-          </div>
+          {/* Right Content - Mobile Phone Visual */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-md">
+              {/* Phone Frame */}
+              <div className="relative bg-[#1A1A1A] rounded-[3rem] p-4 shadow-2xl border border-[#2A2A2A]">
+                <div className="bg-[#0A0A0A] rounded-[2.5rem] overflow-hidden">
+                  {/* Phone Screen Content */}
+                  <div className="bg-[#0F1419] p-4 min-h-[600px]">
+                    {/* Trading Interface Mockup */}
+                    <div className="space-y-4">
+                      {/* Chart Area */}
+                      <div className="bg-[#141414] rounded-lg p-4 h-48 relative overflow-hidden">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          {/* Candlestick Chart Visualization */}
+                          <div className="w-full h-full relative">
+                            {/* Chart Grid */}
+                            <div className="absolute inset-0 opacity-20">
+                              <div className="h-full border-t border-b border-[#2A2A2A]"></div>
+                              <div className="w-full border-l border-r border-[#2A2A2A]"></div>
+                            </div>
+                            {/* Candlesticks */}
+                            <svg className="w-full h-full" viewBox="0 0 200 100">
+                              {/* Green candles */}
+                              <rect x="20" y="30" width="8" height="40" fill="#00FF88" />
+                              <rect x="35" y="25" width="8" height="45" fill="#00FF88" />
+                              <rect x="50" y="20" width="8" height="50" fill="#00FF88" />
+                              <rect x="65" y="35" width="8" height="35" fill="#00FF88" />
+                              <rect x="80" y="15" width="8" height="55" fill="#00FF88" />
+                              {/* Red candles */}
+                              <rect x="95" y="60" width="8" height="30" fill="#FF4444" />
+                              <rect x="110" y="70" width="8" height="20" fill="#FF4444" />
+                              <rect x="125" y="65" width="8" height="25" fill="#FF4444" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="absolute bottom-2 left-4 text-xs text-[#00FF88] font-semibold">
+                          BTC/USDT
+                        </div>
+                        <div className="absolute bottom-2 right-4 text-xs text-white">
+                          $67,234.56
+                        </div>
+                      </div>
 
-          {/* Price Ticker */}
-          <div className="bg-[#141414] border border-[#1E1E1E] rounded-lg p-4 overflow-hidden">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <TrendingUp className="w-5 h-5 text-[#00D9FF]" />
-              <span className="text-sm text-[#A0A0A0]">Live Prices</span>
-            </div>
-            <div className="flex flex-wrap justify-center gap-6">
-              {tickerData.map((ticker) => (
-                <div key={ticker.symbol} className="flex items-center gap-2">
-                  <span className="text-white font-medium">{ticker.symbol}</span>
-                  <span className="text-white">${ticker.price}</span>
-                  <span className="text-[#00FF88] text-sm">{ticker.changePercent}</span>
+                      {/* Order Book */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-[#141414] rounded-lg p-3">
+                          <div className="text-xs text-[#A0A0A0] mb-2">Bids</div>
+                          <div className="space-y-1">
+                            {[67.2, 67.1, 67.0, 66.9, 66.8].map((price, i) => (
+                              <div key={i} className="flex justify-between text-xs">
+                                <span className="text-[#00FF88]">{price.toFixed(2)}</span>
+                                <span className="text-white">0.{i + 1}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="bg-[#141414] rounded-lg p-3">
+                          <div className="text-xs text-[#A0A0A0] mb-2">Asks</div>
+                          <div className="space-y-1">
+                            {[67.3, 67.4, 67.5, 67.6, 67.7].map((price, i) => (
+                              <div key={i} className="flex justify-between text-xs">
+                                <span className="text-[#FF4444]">{price.toFixed(2)}</span>
+                                <span className="text-white">0.{i + 1}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Trading Pairs List */}
+                      <div className="bg-[#141414] rounded-lg p-3">
+                        <div className="space-y-2">
+                          {[
+                            { pair: 'BTC/USDT', price: '67,234', change: '+1.2%', color: '#00FF88' },
+                            { pair: 'ETH/USDT', price: '3,456', change: '+0.8%', color: '#00FF88' },
+                            { pair: 'SOL/USDT', price: '98.45', change: '+2.1%', color: '#00FF88' },
+                          ].map((item, i) => (
+                            <div key={i} className="flex justify-between items-center text-xs">
+                              <span className="text-white font-medium">{item.pair}</span>
+                              <span className="text-white">{item.price}</span>
+                              <span className={`font-semibold`} style={{ color: item.color }}>
+                                {item.change}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00D9FF] opacity-10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00FF88] opacity-10 rounded-full blur-3xl"></div>
+      </div>
     </section>
   )
 }
-
