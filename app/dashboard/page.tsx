@@ -6,6 +6,8 @@ import { useAuth } from '@/hooks/useAuth'
 import { useMarketData } from '@/hooks/useMarketData'
 import { formatNumber } from '@/lib/market-data'
 
+export const dynamic = 'force-dynamic'
+
 export default function DashboardPage() {
   const router = useRouter()
   const { user, loading: authLoading, isAuthenticated } = useAuth()
